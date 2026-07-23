@@ -1,0 +1,1 @@
+kubectl set image deployment/redis-deployment -n redis-namespace redis-container=redis:8.0
