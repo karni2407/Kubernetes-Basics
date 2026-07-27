@@ -1,0 +1,3 @@
+before port-forward, use sudo firewall-cmd --add-port=<port>/<protocol> (8000/tcp)
+kubectl port-forward svc/my-service --address=0.0.0.0 8000:80 (host port:container port)
+,host port is up to you , container port must be changed before making the docker image or maybe --bind command
