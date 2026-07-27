@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: exam-portal
+  namespace: karni2407
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: exam-portal
+
+  template:
+    metadata:
+      labels:
+        app: exam-portal
+
+    spec:
+      containers:
+      - name: exam-portal
+        image: karni2407/exam_portal:latest
+        ports:
+        - containerPort: 8000
