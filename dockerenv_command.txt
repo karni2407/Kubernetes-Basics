@@ -1,1 +1,0 @@
-docker run --env-file .env -p 8000:8000 user_name/images_name:latest

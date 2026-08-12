@@ -1,0 +1,14 @@
+docker run --env-file .env -p 8000:8000 user_name/images_name:latest
+
+docker container prune
+
+docker rmi image_name:latest
+
+docker ps -a
+
+-------------------
+docker login
+
+docker tag <local-image>:<tag> <dockerhub-username>/<repository>:<tag>
+
+docker push <dockerhub-username>/<repository>:<tag>
