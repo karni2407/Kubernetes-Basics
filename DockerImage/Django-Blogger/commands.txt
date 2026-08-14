@@ -1,0 +1,4 @@
+kubectl create configmap django-config \
+  --from-literal=ENV=dev \
+  --from-literal=ALLOWED_HOSTS=localhost,127.0.0.1,* \
+  -n karni2407

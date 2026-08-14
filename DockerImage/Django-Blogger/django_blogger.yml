@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: django-blogger
+  namespace: karni2407
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: django-blogger
+
+  template:
+    metadata:
+      labels:
+        app: django-blogger
+
+    spec:
+      containers:
+      - name: django-blogger
+        image: karni2407/django-blogger:latest
+
+        ports:
+        - containerPort: 8000
+
+        env:
+        - name: ENV
+          valueFrom:
+            configMapKeyRef:
+              name: django-config
+              key: ENV
+
+        - name: ALLOWED_HOSTS
+          valueFrom:
+            configMapKeyRef:
+              name: django-config
+              key: ALLOWED_HOSTS

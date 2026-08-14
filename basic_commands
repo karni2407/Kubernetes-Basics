@@ -5,3 +5,11 @@ command for interactive shell - kubectl exec -it exam-portal-84644b58f8-68fk6 -n
 which is basically for accessing pods to provide whatever changes may be required
 
 rolling updates - kubectl set image deployment/redis-deployment -n redis-namespace redis-container=redis:8.0
+
+
+configmaps - kubectl create configmap django-config \
+  --from-literal=ENV=dev \
+  --from-literal=ALLOWED_HOSTS=localhost,127.0.0.1,* \
+  -n karni2407 
+
+these are for passing environment variables to django
