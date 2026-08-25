@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: django-blogger
+  name: gamers-island
   namespace: karni2407
 
 spec:
@@ -10,17 +10,17 @@ spec:
 
   selector:
     matchLabels:
-      app: django-blogger
+      app: gamers-island
 
   template:
     metadata:
       labels:
-        app: django-blogger
+        app: gamers-island
 
     spec:
       containers:
-      - name: django-blogger
-        image: karni2407/django-blogger:latest
+      - name: gamers-island
+        image: karni2407/gamers-island:latest
 
         ports:
         - containerPort: 8000
@@ -29,11 +29,11 @@ spec:
         - name: ENV
           valueFrom:
             configMapKeyRef:
-              name: blogs-config
+              name: games-config
               key: ENV
 
         - name: ALLOWED_HOSTS
           valueFrom:
             configMapKeyRef:
-              name: blogs-config
+              name: games-config
               key: ALLOWED_HOSTS
